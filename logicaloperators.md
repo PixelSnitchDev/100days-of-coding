@@ -13,3 +13,20 @@ Precedence: ! is highest, then &&, then ||. So a && b || c && d reads as (a && b
 
 The one-sentence takeaway: in JS, || and && are value selectors (first truthy / first falsy), not just true/false machines — that's what makes patterns like default values possible.
 */
+/*
+Nullish coalescing operator '??'
+
+The important difference between them is that:
+
+|| returns the first truthy value.
+?? returns the first defined value.
+In other words, || doesn’t distinguish between false, 0, an empty string "" and null/undefined. They are all the same – falsy values. If any of these is the first argument of ||, then we’ll get the second argument as the result.
+
+example 
+let height = 0;
+
+alert(height || 100); // 100
+alert(height ?? 100); // 0
+
+precedence is same for or and nullish coalescing operator
+*/
